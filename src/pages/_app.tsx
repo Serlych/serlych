@@ -1,3 +1,5 @@
+import { type Session } from "next-auth";
+import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 import { Inter } from "next/font/google";
 
@@ -10,11 +12,16 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-const MyApp: AppType = ({ Component, pageProps }) => {
+const MyApp: AppType<{ session: Session | null }> = ({
+  Component,
+  pageProps: { session, ...pageProps },
+}) => {
   return (
-    <main className={`font-sans ${inter.variable} max-w-7xl my-0 mx-auto place-content-center justify-center`}>
-      <Component {...pageProps} />
-    </main>
+    <SessionProvider session={session}>
+      <main className={`font-sans ${inter.variable} max-w-7xl my-0 mx-auto place-content-center justify-center`}>
+        <Component {...pageProps} />
+      </main>
+    </SessionProvider>
   );
 };
 
