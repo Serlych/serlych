@@ -9,9 +9,10 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
+
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <main className={`font-sans ${inter.variable}`}>
+    <main className={`font-sans ${inter.variable} max-w-7xl my-0 mx-auto place-content-center justify-center`}>
       <Component {...pageProps} />
     </main>
   );
