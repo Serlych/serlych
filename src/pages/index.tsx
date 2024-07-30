@@ -60,8 +60,10 @@ export default function Home({ asciiCat }: HomeProps) {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 export async function getStaticProps(_) {
-  const asciiCat = asciiCats() as string;
+  const asciiCat = asciiCats();
 
   return {
     props: {

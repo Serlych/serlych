@@ -5,7 +5,7 @@ import {
   protectedProcedure,
   publicProcedure,
 } from "~/server/api/trpc";
-import { posts, users } from "~/server/db/schema";
+import { posts } from "~/server/db/schema";
 import { eq } from "drizzle-orm";
 
 export const postRouter = createTRPCRouter({
@@ -17,18 +17,18 @@ export const postRouter = createTRPCRouter({
       };
     }),
 
-  create: protectedProcedure
-    .input(z.object({ title: z.string().min(1) }))
-    .mutation(async ({ ctx, input }) => {
-      // simulate a slow db call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      await ctx.db.insert(posts).values({
-        title: input.title,
-        createdById: ctx.session.user.id,
-      });
-    }),
-
+  // create: protectedProcedure
+  //   .input(z.object({ title: z.string().min(1) }))
+  //   .mutation(async ({ ctx, input }) => {
+  //     // simulate a slow db call
+  //     await new Promise((resolve) => setTimeout(resolve, 1000));
+  //
+  //     await ctx.db.insert(posts).values({
+  //       title: input.title,
+  //       createdById: ctx.session.user.id,
+  //     });
+  //   }),
+  //
   getLatestPosts: publicProcedure.query(({ ctx }) => {
     return ctx.db.query.posts.findMany({
       where: eq(posts.isLive, true),

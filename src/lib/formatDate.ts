@@ -2,9 +2,9 @@ export default function formatDate(date: Date | null) {
   if (!date) return "";
 
   const options = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+    year: "numeric" as const,
+    month: "long" as const,
+    day: "numeric" as const,
     timezone: "UTC",
   };
 
