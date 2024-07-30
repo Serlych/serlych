@@ -11,10 +11,10 @@ export default function Hero() {
         My name is Isaac Chavoya,
         <br />I am a Full Stack Software Engineer 😄
       </p>
-      <div>
-        <Button placement="left">Contact me</Button>
-        <Button placement="right">Download resume</Button>
-      </div>
+      {/*<div>*/}
+      {/*  <Button placement="left">Contact me</Button>*/}
+      {/*  <Button placement="right">Download resume</Button>*/}
+      {/*</div>*/}
     </Section>
   );
 }

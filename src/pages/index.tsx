@@ -39,12 +39,12 @@ export default function Home({ asciiCat }: HomeProps) {
             <Button placement="left">
               <Link href="/resume">Check my resume</Link>
             </Button>
-            <Button placement="center">
-              <Link href="/blog">Read my blog</Link>
-            </Button>
-            <Button placement="right">
-              <Link href="/contact">Contact me</Link>
-            </Button>
+            {/*<Button placement="center">*/}
+            {/*  <Link href="/blog">Read my blog</Link>*/}
+            {/*</Button>*/}
+            {/*<Button placement="right">*/}
+            {/*  <Link href="/contact">Contact me</Link>*/}
+            {/*</Button>*/}
           </div>
           <span className="font-semibold">Isaac Chavoya, {currentYear}.</span>
         </div>

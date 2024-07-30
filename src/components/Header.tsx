@@ -21,12 +21,12 @@ export default function Header() {
         <Link href="/resume" className="text-xl">
           Resume
         </Link>
-        <Link href="/blog" className="text-xl">
-          Blog
-        </Link>
-        <Link href="/contact" className="text-xl">
-          Contact
-        </Link>
+        {/*<Link href="/blog" className="text-xl">*/}
+        {/*  Blog*/}
+        {/*</Link>*/}
+        {/*<Link href="/contact" className="text-xl">*/}
+        {/*  Contact*/}
+        {/*</Link>*/}
       </div>
       <div className="flex gap-3">
         <ThemeToggle />
