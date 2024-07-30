@@ -1,14 +1,19 @@
 import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
-  content: ["./src/**/*.tsx"],
+  darkMode: "class",
+  content: [
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "./src/**/*.js",
+    "./src/**/*.jsx",
+  ],
   theme: {
-    // extend: {
-    //   fontFamily: {
-    //     sans: ["var(--font-sans)", ...fontFamily.sans],
-    //   },
-    // },
+    extend: {
+      backdropBlur: {
+        sm: "6px",
+      },
+    },
   },
   plugins: [],
 } satisfies Config;

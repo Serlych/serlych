@@ -5,7 +5,8 @@ import {
   protectedProcedure,
   publicProcedure,
 } from "~/server/api/trpc";
-import { posts } from "~/server/db/schema";
+import { posts, users } from "~/server/db/schema";
+import { eq } from "drizzle-orm";
 
 export const postRouter = createTRPCRouter({
   hello: publicProcedure
@@ -28,11 +29,29 @@ export const postRouter = createTRPCRouter({
       });
     }),
 
-  getLatest: publicProcedure.query(({ ctx }) => {
-    return ctx.db.query.posts.findFirst({
+  getLatestPosts: publicProcedure.query(({ ctx }) => {
+    return ctx.db.query.posts.findMany({
+      where: eq(posts.isLive, true),
       orderBy: (posts, { desc }) => [desc(posts.createdAt)],
+      columns: {
+        id: true,
+        title: true,
+        summary: true,
+        tags: true,
+        createdAt: true,
+        createdBy: true,
+      },
     });
   }),
+
+  getById: publicProcedure
+    .input(z.object({ id: z.string() }))
+    .query(({ input, ctx }) => {
+      return ctx.db.query.posts.findFirst({
+        where: (posts, { eq, and }) =>
+          and(eq(posts.id, input.id), eq(posts.isLive, true)),
+      });
+    }),
 
   getSecretMessage: protectedProcedure.query(() => {
     return "you can now see this secret message!";

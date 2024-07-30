@@ -1,9 +1,15 @@
-import type { HTMLAttributes, PropsWithChildren } from 'react';
+import type { HTMLAttributes, PropsWithChildren } from "react";
+import { THEME_BACKGROUND } from "~/constants";
 
-export default function Panel({ children, className }: PropsWithChildren & HTMLAttributes<HTMLDivElement>) {
+export default function Panel({
+  children,
+  className,
+}: PropsWithChildren & HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={`backdrop-blur-sm bg-white bg-opacity-15 p-5 border border-violet-100 border-opacity-30 rounded-lg ${className}`}>
+    <div
+      className={`PANEL-- backdrop-blur-sm ${THEME_BACKGROUND} ${className}`}
+    >
       {children}
     </div>
-  )
+  );
 }

@@ -2,6 +2,7 @@ import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
 import { api } from "~/utils/api";
 
@@ -18,9 +19,11 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <main className={`font-sans ${inter.variable} max-w-7xl my-0 mx-auto place-content-center justify-center`}>
-        <Component {...pageProps} />
-      </main>
+      <ThemeProvider attribute="class">
+        <main className={`font-sans ${inter.variable} mx-auto max-w-7xl`}>
+          <Component {...pageProps} />
+        </main>
+      </ThemeProvider>
     </SessionProvider>
   );
 };
