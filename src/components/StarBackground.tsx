@@ -8,7 +8,7 @@ export default function StarBackground() {
   const { theme } = useTheme();
 
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
+    void initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => {
       setInit(true);

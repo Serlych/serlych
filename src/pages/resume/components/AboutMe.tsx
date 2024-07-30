@@ -45,7 +45,7 @@ export default function AboutMe() {
   return (
     <Section className="items-center justify-between gap-7">
       <p className="w-2/3 text-justify text-2xl">
-        I'm not just an engineer – I'm a person who{" "}
+        I’m not just an engineer – I’m a person who{" "}
         <b>thrives on transformation and innovation</b>. My journey is fueled by
         a boundless <b>appetite for knowledge</b> and a positive,{" "}
         <b>can-do attitude</b>. As an <b>adaptable problem-solver</b>, I dive

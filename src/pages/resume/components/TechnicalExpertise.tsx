@@ -40,6 +40,7 @@ export default function TechnicalExpertise() {
         <LogoWithDescription logoSrc={js} description="JavaScript" />
         <LogoWithDescription logoSrc={ts} description="TypeScript" />
         <LogoWithDescription logoSrc={html} description="HTML" />
+        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
         <LogoWithDescription logoSrc={css} description="CSS" />
         <LogoWithDescription logoSrc={git} description="Git" />
         <LogoWithDescription logoSrc={react} description="React" />

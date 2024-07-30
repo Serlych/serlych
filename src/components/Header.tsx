@@ -39,6 +39,7 @@ export default function Header() {
         </Link>
         <Link href="https://github.com/Serlych" target="_blank">
           <Image
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             src={gitHubLogo}
             alt="GitHub Logo"
             className="white-img h-14 w-14 dark:brightness-0 dark:invert"

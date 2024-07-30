@@ -14,7 +14,7 @@ export default function Experience() {
             <>
               <li>
                 Developed the standard CI/CD pipeline and deployment
-                infrastructure for all of the companies' Single-Page
+                infrastructure for all of the companies’ Single-Page
                 Applications using GitHub Actions and AWS
               </li>
               <li>
@@ -25,7 +25,7 @@ export default function Experience() {
                 and accessible to all employees
               </li>
               <li>
-                Lead the development of the company's first mobile application
+                Lead the development of the company’s first mobile application
               </li>
               <li>
                 Crafted an offline solution for a mobile application involving
@@ -34,52 +34,78 @@ export default function Experience() {
               </li>
               <li>
                 Lead a team of 3 developers to create a custom business
-                application for a client in the fiscal industry
+                application for a client in the fiscal industry, designing the
+                application’s flow, system architecture, technical documentation
+                and database schema
               </li>
               <li>
                 Implemented issue tracking, project management and a severity
                 triage system for the development team
               </li>
-              <li>//TODO interviews</li>
+              <li>
+                Designed a microservice-based application for managing
+                government tax entity invoices
+              </li>
+              <li>
+                Lead talent interviews, create custom interview paths and
+                exercises for candidate developers according to the company’s
+                needs
+              </li>
             </>
           ) : activeJob === "Wizeline" ? (
             <>
               <li>
                 Helped with the complete rewrite of the main product of a major
-                financial company
+                financial company, modernizing its codebase, improving its
+                performance and future-proofing it
               </li>
               <li>Promoted to Software Engineer II after 1 year</li>
               <li>
                 Standardized the production release process for a client,
-                reducing cognitive load and time-to-release by 20%
+                reducing cognitive load for new engineers, streamlining it from
+                manual to automated workflows and reducing the time-to-release
               </li>
               <li>
-                Retained an important client thanks to successful communication
-                and project management
+                Retained an important client thanks to successful communication,
+                careful collaboration and social skills
               </li>
               <li>
                 Developed a custom configuration service that allowed a
                 media-industry client to globally customize content delivery in
-                all of their publications
+                all of their multiple publication networks
               </li>
               <li>
                 Created a production-ready, tested and documented menu component
-                for a major media-streaming company with thousands of users
+                for a major media-streaming company with thousands of users,
+                improving the overall user experience
               </li>
               <li>Promoted to Software Engineer III after 2 years</li>
-              <li>//TODO interviews</li>
+              <li>
+                Lead a couple of interviews with junior engineers, leading to
+                the hiring of 2 new engineers
+              </li>
             </>
           ) : activeJob === "iTexico" ? (
             <>
               <li>
-                Created junior engineers learning path for front-end development
+                Created a junior engineers learning path for front-end
+                development, leading to the creation of a junior developer
+                course on React
               </li>
-              <li>Worked at multiple enhancements for a </li>
-              <li>LAKSJD LKAJSDLK ASJD</li>
-              <li>LAKSJD LKAJSDLK ASJD</li>
-              <li>LAKSJD LKAJSDLK ASJD</li>
-              <li>LAKSJD LKAJSDLK ASJD</li>
-              <li>LAKSJD LKAJSDLK ASJD</li>
+              <li>
+                Worked on usability and performance enhancements for a major oil
+                company CRM, improving the overall user experience and reducing
+                loading times
+              </li>
+              <li>
+                Lead a React/Redux stack course for new engineers, improving the
+                onboarding process for new engineers
+              </li>
+              <li>
+                Worked on a custom propietary application for the company’s
+                clients, improving the customer experience for work visibility
+                and reducing the number of customer support requests
+              </li>
             </>
           ) : (
             <>Click on a job to check out the key achievements! 🚀</>

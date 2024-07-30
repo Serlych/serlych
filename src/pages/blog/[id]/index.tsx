@@ -77,5 +77,7 @@ export default function BlogPost() {
 }
 
 function breakBodyIntoParagraphs(body: string) {
-  return body.split(".").map((paragraph) => <p>{paragraph}</p>);
+  return body
+    .split(".")
+    .map((paragraph, i) => <p key={`blog-p-${i}`}>{paragraph}</p>);
 }
