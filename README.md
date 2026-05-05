@@ -33,4 +33,4 @@ const Isaac = {
 - 📝 I'm a huge Markdown nerd, and I use it for everything (Documentation is my passion!)
 - 🐾 I code with my feline co-pilot, López Gatell.
 
-# [Check out my Website 🌐!](https://serlych.vercel.app/)
+# [Check out my Website 🌐!](https://serlych.dev/)
