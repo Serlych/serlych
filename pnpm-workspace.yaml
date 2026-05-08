@@ -1,4 +1,0 @@
-allowBuilds:
-  '@tsparticles/engine': true
-  esbuild: true
-  typeit: true

@@ -2,6 +2,7 @@
   "name": "serlych",
   "version": "0.2.1",
   "private": true,
+  "packageManager": "pnpm@11.0.6",
   "type": "module",
   "scripts": {
     "build": "tsgo --noEmit -p tsconfig.json && next build",
@@ -52,7 +53,8 @@
     "drizzle-kit": "^0.31.10",
     "oxfmt": "^0.48.0",
     "oxlint": "^1.14.0",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "typescript": "6.0.3"
   },
   "ct3aMetadata": {
     "initVersion": "7.30.0"

@@ -11,14 +11,7 @@ type ContactStatus = "idle" | "submitting" | "success" | "error";
 
 export default function Contact() {
   const [message, setMessage] = useState("");
-  const sendContactMessage = api.contact.send.useMutation({
-    onSuccess(data) {
-      setMessage(data.message);
-    },
-    onError(error) {
-      setMessage(error.message);
-    },
-  });
+  const sendContactMessage = api.contact.send.useMutation();
 
   let status: ContactStatus = "idle";
   if (sendContactMessage.isPending) {
@@ -42,10 +35,11 @@ export default function Contact() {
     };
 
     try {
-      await sendContactMessage.mutateAsync(payload);
+      const data = await sendContactMessage.mutateAsync(payload);
+      setMessage(data.message);
       event.currentTarget.reset();
-    } catch {
-      // handled by mutation callbacks
+    } catch (error: unknown) {
+      setMessage(error instanceof Error ? error.message : "Failed to send message.");
     }
   }
 
