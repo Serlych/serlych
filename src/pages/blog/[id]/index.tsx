@@ -10,7 +10,13 @@ import Image from "next/image";
 
 import cat from "~/assets/cat.jpeg";
 import Signature from "~/pages/blog/components/Signature";
-import calculateReadingTimeInMinutes from "~/lib/calculateReadingTimeInMinutes";
+
+const WORDS_PER_MINUTE = 300;
+
+function calculateReadingTimeInMinutes(body: string) {
+  const wordCount = body.split(" ").length;
+  return Math.round(wordCount / WORDS_PER_MINUTE);
+}
 
 export default function BlogPost() {
   // const { setTheme } = useTheme();
@@ -46,20 +52,15 @@ export default function BlogPost() {
         <div className="flex flex-col gap-20">
           <div className="flex w-fit flex-col gap-5">
             <div className="flex gap-3">
-              {blogPost.tags
-                ?.split(",")
-                .map((tag, i) => (
-                  <Tag tag={tag} key={`${blogPost.id}-${tag}-${i}`} />
-                ))}
+              {blogPost.tags?.split(",").map((tag, i) => (
+                <Tag tag={tag} key={`${blogPost.id}-${tag}-${i}`} />
+              ))}
             </div>
             <h2 className="max-w-xl text-4xl">{blogPost.title}</h2>
             <span>{readingTime} minute read</span>
             <p className="text-xl">{blogPost.summary}</p>
           </div>
-          <Signature
-            createdBy={blogPost.createdBy}
-            createdAt={blogPost.createdAt}
-          />
+          <Signature createdBy={blogPost.createdBy} createdAt={blogPost.createdAt} />
         </div>
         <Image
           src={cat}
@@ -77,7 +78,5 @@ export default function BlogPost() {
 }
 
 function breakBodyIntoParagraphs(body: string) {
-  return body
-    .split(".")
-    .map((paragraph, i) => <p key={`blog-p-${i}`}>{paragraph}</p>);
+  return body.split(".").map((paragraph, i) => <p key={`blog-p-${i}`}>{paragraph}</p>);
 }

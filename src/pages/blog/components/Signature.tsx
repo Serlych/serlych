@@ -1,6 +1,17 @@
-import formatDate from "~/lib/formatDate";
 import { api } from "~/utils/api";
-import Image from "next/image";
+
+function formatDate(date: Date | null) {
+  if (!date) return "";
+
+  const options = {
+    year: "numeric" as const,
+    month: "long" as const,
+    day: "numeric" as const,
+    timezone: "UTC",
+  };
+
+  return new Date(date).toLocaleDateString("en-US", options);
+}
 
 type SignatureProps = {
   createdBy: string | null;
