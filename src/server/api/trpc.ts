@@ -15,6 +15,11 @@ import { ZodError } from "zod";
 
 import { getServerAuthSession } from "~/server/auth";
 import { db } from "~/server/db";
+import { env } from "~/env";
+
+// Email
+import { EmailSender } from "~/server/services/email/email.types";
+import { createResendEmailSender } from "~/server/services/email/resend/contactEmail";
 
 /**
  * 1. CONTEXT
@@ -26,6 +31,7 @@ import { db } from "~/server/db";
 
 interface CreateContextOptions {
   session: Session | null;
+  emailSender: EmailSender;
 }
 
 /**
@@ -42,6 +48,9 @@ const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
     db,
+    services: {
+      emailSender: opts.emailSender,
+    },
   };
 };
 
@@ -59,6 +68,11 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
 
   return createInnerTRPCContext({
     session,
+    emailSender: createResendEmailSender({
+      apiKey: env.RESEND_API_KEY,
+      fromEmail: env.CONTACT_FROM_EMAIL,
+      toEmail: env.CONTACT_TO_EMAIL ?? "",
+    }),
   });
 };
 

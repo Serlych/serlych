@@ -3,6 +3,8 @@ import { THEME_BACKGROUND } from "~/constants";
 
 type ButtonProps = {
   placement: "left" | "right" | "center";
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
 };
 
 function getPlacementClasses(placement: ButtonProps["placement"]) {
@@ -20,12 +22,16 @@ function getPlacementClasses(placement: ButtonProps["placement"]) {
 
 export default function Button({
   placement,
+  onClick,
+  type = "button",
   children,
 }: PropsWithChildren<ButtonProps>) {
   const placementClasses = getPlacementClasses(placement);
 
   return (
     <button
+      onClick={onClick}
+      type={type}
       className={`${placementClasses}
       ${THEME_BACKGROUND}
       cursor-pointer
