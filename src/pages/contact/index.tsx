@@ -37,7 +37,6 @@ export default function Contact() {
     try {
       const data = await sendContactMessage.mutateAsync(payload);
       setMessage(data.message);
-      event.currentTarget.reset();
     } catch (error: unknown) {
       setMessage(error instanceof Error ? error.message : "Failed to send message.");
     }
