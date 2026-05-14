@@ -28,49 +28,85 @@ import neo4j from "~/assets/neo4j.png";
 import scikit from "~/assets/scikit.png";
 import flutter from "~/assets/flutter.png";
 import trpc from "~/assets/trpc.png";
+import tanstack from "~/assets/tanstack.svg";
 import next from "~/assets/next.png";
 import redux from "~/assets/redux.png";
 import tailwind from "~/assets/tailwind.png";
 import supabase from "~/assets/supabase.png";
+import github from "~/assets/github.svg";
+import mongoose from "~/assets/mongoose.svg";
+import zod from "~/assets/zod.svg";
+import kafka from "~/assets/kafka.svg";
+import rabbitmq from "~/assets/rabbitmq.svg";
+import sqs from "~/assets/sqs.svg";
+import kinesis from "~/assets/kinesis.svg";
+import redpanda from "~/assets/redpanda.svg";
+import datadog from "~/assets/datadog.svg";
+import launchdarkly from "~/assets/launchdarkly.svg";
+import meta from "~/assets/meta.svg";
+import whatsapp from "~/assets/whatsapp.svg";
+import bird from "~/assets/bird.svg";
+import { resumeData } from "~/data/resume";
+
+const techLogoMap = {
+  js,
+  ts,
+  html,
+  css,
+  git,
+  react,
+  postgres,
+  markdown,
+  angular,
+  express,
+  node,
+  graphql,
+  apollo,
+  tensorflow,
+  mongo,
+  aws,
+  dart,
+  docker,
+  python,
+  bash,
+  cassandra,
+  neo4j,
+  scikit,
+  flutter,
+  trpc,
+  tanstack,
+  next,
+  redux,
+  tailwind,
+  "react-native": react,
+  supabase,
+  github,
+  mongoose,
+  zod,
+  kafka,
+  rabbitmq,
+  sqs,
+  kinesis,
+  redpanda,
+  datadog,
+  launchdarkly,
+  "meta-api": meta,
+  whatsapp,
+  bird,
+} as const;
 
 export default function TechnicalExpertise() {
   return (
     <Section className="flex-col">
-      <TechShowcase description="I am most experienced with...">
-        <LogoWithDescription logoSrc={js} description="JavaScript" />
-        <LogoWithDescription logoSrc={ts} description="TypeScript" />
-        <LogoWithDescription logoSrc={html} description="HTML" />
-        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
-        <LogoWithDescription logoSrc={css} description="CSS" />
-        <LogoWithDescription logoSrc={git} description="Git" />
-        <LogoWithDescription logoSrc={react} description="React" />
-        <LogoWithDescription logoSrc={postgres} description="PostgreSQL" />
-        <LogoWithDescription logoSrc={markdown} description="Docs" />
-      </TechShowcase>
-      <TechShowcase description="I have some experience with...">
-        <LogoWithDescription logoSrc={angular} description="Angular" />
-        <LogoWithDescription logoSrc={express} description="Express" />
-        <LogoWithDescription logoSrc={node} description="NodeJS" />
-        <LogoWithDescription logoSrc={graphql} description="GraphQL" />
-        <LogoWithDescription logoSrc={apollo} description="Apollo" />
-        <LogoWithDescription logoSrc={tensorflow} description="TensorFlow" />
-        <LogoWithDescription logoSrc={mongo} description="MongoDB" />
-        <LogoWithDescription logoSrc={aws} description="AWS" />
-        <LogoWithDescription logoSrc={dart} description="Dart" />
-        <LogoWithDescription logoSrc={docker} description="Docker" />
-        <LogoWithDescription logoSrc={python} description="Python" />
-        <LogoWithDescription logoSrc={bash} description="Bash" />
-        <LogoWithDescription logoSrc={cassandra} description="CassandraDB" />
-        <LogoWithDescription logoSrc={neo4j} description="Neo4j" />
-        <LogoWithDescription logoSrc={scikit} description="Scikit" />
-        <LogoWithDescription logoSrc={flutter} description="Flutter" />
-        <LogoWithDescription logoSrc={trpc} description="TRPC" />
-        <LogoWithDescription logoSrc={next} description="NextJS" />
-        <LogoWithDescription logoSrc={redux} description="Redux" />
-        <LogoWithDescription logoSrc={tailwind} description="Tailwind" />
-        <LogoWithDescription logoSrc={react} description="Native" />
-        <LogoWithDescription logoSrc={supabase} description="Supabase" />
-      </TechShowcase>
+      {resumeData.technicalExpertise.sections.map((section, sectionIndex) => (
+        <TechShowcase key={sectionIndex} description={section.description}>
+          {section.items.map((item) => {
+            const logoSrc = item.id in techLogoMap ? techLogoMap[item.id as keyof typeof techLogoMap] : undefined;
+
+            return <LogoWithDescription key={item.id} logoSrc={logoSrc} description={item.label} />;
+          })}
+        </TechShowcase>
+      ))}
     </Section>
   );
 }

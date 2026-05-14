@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { THEME_BACKGROUND } from "~/constants";
-import { resumeContent } from "~/pages/resume/content";
+import { resumeData } from "~/data/resume";
 
 function getCurrentYear() {
   const today = new Date();
@@ -16,33 +16,29 @@ export default function Footer() {
     >
       <div className="flex gap-20">
         <div>
-          <h3 className="mb-5 font-bold">Sitemap</h3>
+          <h3 className="mb-5 font-bold">{resumeData.footer.sitemapTitle}</h3>
           <ul className="flex list-inside flex-col gap-3">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/resume">Resume</Link>
-            </li>
+            {resumeData.footer.links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
             {/*<li>*/}
             {/*  <Link href="/blog">Blog</Link>*/}
             {/*</li>*/}
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
           </ul>
         </div>
         <div>
-          <h3 className="mb-5 font-bold">Additional information</h3>
+          <h3 className="mb-5 font-bold">{resumeData.footer.additionalInfoTitle}</h3>
           <ul className="list-inside list-disc">
-            <li>Located in {resumeContent.footer.location}</li>
-            {resumeContent.footer.facts.map((fact) => (
+            <li>Located in {resumeData.footer.location}</li>
+            {resumeData.footer.facts.map((fact) => (
               <li key={fact}>{fact}</li>
             ))}
           </ul>
         </div>
       </div>
-      <h3>Isaac Chavoya, {currentYear}.</h3>
+      <h3>{resumeData.footer.signatureName}, {currentYear}.</h3>
     </footer>
   );
 }
