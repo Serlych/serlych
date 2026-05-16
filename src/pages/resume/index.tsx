@@ -3,6 +3,7 @@ import Head from "next/head";
 import Header from "~/components/Header";
 import Hero from "~/pages/resume/components/Hero";
 import AboutMe from "~/pages/resume/components/AboutMe";
+import Superpowers from "~/pages/resume/components/Superpowers";
 import Experience from "~/pages/resume/components/Experience";
 import TechnicalExpertise from "~/pages/resume/components/TechnicalExpertise";
 import Education from "~/pages/resume/components/Education";
@@ -21,6 +22,7 @@ export default function Resume() {
       <Header />
       <Hero />
       <AboutMe />
+      <Superpowers />
       <Experience />
       <TechnicalExpertise />
       <Education />
