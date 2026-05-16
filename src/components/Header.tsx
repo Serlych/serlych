@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import dailyDevLogo from "~/assets/dailydev.svg";
 import linkedInLogo from "~/assets/linkedin.png";
 import gitHubLogo from "~/assets/github.svg";
 import ThemeToggle from "~/components/ThemeToggle";
@@ -30,6 +31,9 @@ export default function Header() {
       </div>
       <div className="flex gap-3">
         <ThemeToggle />
+        <Link href="https://app.daily.dev/serlych" target="_blank" rel="noreferrer">
+          <Image src={dailyDevLogo} alt="daily.dev Logo" className="h-14 w-14" />
+        </Link>
         <Link href="https://www.linkedin.com/in/joelchavoya/" target="_blank">
           <Image
             src={linkedInLogo}
@@ -39,7 +43,6 @@ export default function Header() {
         </Link>
         <Link href="https://github.com/Serlych" target="_blank">
           <Image
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             src={gitHubLogo}
             alt="GitHub Logo"
             className="white-img h-14 w-14 dark:brightness-0 dark:invert"
