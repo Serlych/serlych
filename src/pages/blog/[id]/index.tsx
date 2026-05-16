@@ -23,25 +23,22 @@ export default function BlogPost() {
   // setTheme("light");
 
   const router = useRouter();
-  const blogPostId = router.query.id;
+  const blogPostId = typeof router.query.id === "string" ? router.query.id : undefined;
 
   if (!blogPostId) {
     return null;
   }
 
-  const { data: blogPost, error } = api.post.getById.useQuery({
-    id: router.query.id as string,
+  const { data: blogPost } = api.post.getById.useQuery({
+    id: blogPostId,
   });
 
   if (!blogPost?.body) {
     return null;
   }
 
-  if (error) {
-  }
-
-  const paragraphs = breakBodyIntoParagraphs(blogPost.body);
   const readingTime = calculateReadingTimeInMinutes(blogPost.body);
+  const tags = blogPost.tags?.split(",").filter((tag: string) => tag.length > 0) ?? [];
 
   return (
     <>
@@ -52,7 +49,7 @@ export default function BlogPost() {
         <div className="flex flex-col gap-20">
           <div className="flex w-fit flex-col gap-5">
             <div className="flex gap-3">
-              {blogPost.tags?.split(",").map((tag, i) => (
+              {tags.map((tag: string, i: number) => (
                 <Tag tag={tag} key={`${blogPost.id}-${tag}-${i}`} />
               ))}
             </div>
