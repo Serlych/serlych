@@ -27,21 +27,23 @@ export default function Experience() {
         {resumeData.experience.jobs.map((job, index) => (
           <div key={job.id}>
             <div
-              className="bullet flex cursor-pointer items-center hover:bg-indigo-400 hover:bg-opacity-15"
+              className="bullet flex cursor-pointer items-center rounded-lg hover:bg-indigo-400 hover:bg-opacity-15"
               onClick={() => setActiveJob(job.id)}
             >
               <div className="flex flex-col">
                 <span className="bg-gradient-to-r from-violet-300 to-indigo-300 bg-clip-text text-4xl font-bold text-transparent">
                   {job.role} at
                   <a
-                    className="ml-2 font-bold underline dark:text-white"
+                    className="ml-2 font-bold underline text-indigo-950 dark:text-white"
                     href={job.companyUrl}
                     target="_blank"
                   >
                     {job.company}
                   </a>
                 </span>
-                <span className="font-bold">{job.period}</span>
+                <span className="font-bold text-slate-700 dark:text-white">
+                  {job.period}
+                </span>
               </div>
             </div>
             {index < resumeData.experience.jobs.length - 1 ? <div className="connector h-0" /> : null}

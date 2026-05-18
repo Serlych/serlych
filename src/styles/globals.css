@@ -28,10 +28,14 @@ body {
 
 .bullet::before {
   content: '•';
-  color: white;
+  color: rgb(49 46 129);
   font-size: 6em;
   margin-right: 0.1em;
   transition: transform 0.2s ease-out;
+}
+
+.dark .bullet::before {
+  color: white;
 }
 
 .bullet:hover::before {
@@ -48,7 +52,7 @@ body {
 
 .connector::before {
   content: '';
-  background-color: white;
+  background-color: rgb(79 70 229);
   height: 75px;
   width: 3px;
   display: block;
@@ -58,12 +62,17 @@ body {
 
 .connector::after {
   content: '';
-  background-color: white;
+  background-color: rgb(79 70 229);
   height: 75px;
   width: 3px;
   display: block;
   position: relative;
   top: -4rem;
+}
+
+.dark .connector::before,
+.dark .connector::after {
+  background-color: white;
 }
 
 .connector {
