@@ -19,7 +19,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
         <main className={`font-sans ${inter.variable} mx-auto max-w-7xl`}>
           <Component {...pageProps} />
         </main>
