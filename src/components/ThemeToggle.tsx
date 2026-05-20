@@ -1,8 +1,14 @@
 "use client";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <label className="mr-5 inline-flex cursor-pointer items-center">
@@ -10,7 +16,9 @@ export default function ThemeToggle() {
         type="checkbox"
         value=""
         className="peer sr-only"
-        onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+        aria-label="Toggle theme"
+        checked={mounted ? resolvedTheme === "dark" : true}
+        onChange={(event) => setTheme(event.target.checked ? "dark" : "light")}
       />
       <span className="text-3xl font-medium text-gray-900 dark:text-gray-300">
         ☀️
