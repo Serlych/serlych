@@ -25,17 +25,20 @@ const languageImageMap = {
 
 export default function Education() {
   return (
-    <Section className="flex-col ">
-      <h2 className="bg-gradient-to-bl from-violet-400 to-sky-300 bg-clip-text text-center text-4xl font-bold text-transparent">
+    <Section className="flex-col lg:flex-col">
+      <h2 className="bg-gradient-to-bl from-violet-400 to-sky-300 bg-clip-text text-center text-3xl font-bold text-transparent sm:text-4xl">
         {resumeData.education.title}
       </h2>
-      <div className="flex justify-evenly">
+      <div className="flex flex-wrap justify-center gap-4">
         {resumeData.education.schools.map((school) => (
-          <Panel key={school.id} className="flex min-w-80 max-w-80 items-center gap-5">
+          <Panel
+            key={school.id}
+            className="flex w-full max-w-md flex-col items-center gap-4 text-center sm:flex-row sm:text-left"
+          >
             <Image
               src={schoolImageMap[school.id]}
               alt={school.imageAlt}
-              className={`h-20 w-20 ${school.id === "iteso" ? "drop-shadow-xl" : "drop-shadow-lg"}`}
+              className={`h-16 w-16 shrink-0 sm:h-20 sm:w-20 ${school.id === "iteso" ? "drop-shadow-xl" : "drop-shadow-lg"}`}
             />
             <div className="flex flex-col">
               <b>{school.title}</b>
@@ -45,7 +48,7 @@ export default function Education() {
           </Panel>
         ))}
       </div>
-      <div className="flex justify-center gap-5">
+      <div className="flex flex-wrap justify-center gap-5">
         {resumeData.education.languages.map((language) => (
           <LogoWithDescription
             key={language.id}

@@ -7,12 +7,12 @@ import { resumeData } from "~/data/resume";
 
 export default function Closer() {
   return (
-    <Section>
+    <Section className="items-center">
       <div className="flex flex-col justify-center gap-5">
-        <h2 className="bg-gradient-to-l from-sky-400 to-violet-500 bg-clip-text text-5xl font-bold text-transparent">
+        <h2 className="bg-gradient-to-l from-sky-400 to-violet-500 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl lg:text-5xl">
           {resumeData.closer.title}
         </h2>
-        <h3 className="text-3xl">
+        <h3 className="text-2xl sm:text-3xl">
           {resumeData.closer.intro}
           <br />
           {resumeData.closer.catLine}
@@ -23,7 +23,7 @@ export default function Closer() {
         alt={resumeData.closer.imageAlt}
         width={426}
         height={320}
-        className={`drop-shadow-xl ${THEME_BACKGROUND} p-0`}
+        className={`h-auto w-full self-center object-contain max-w-[26.625rem] drop-shadow-xl ${THEME_BACKGROUND} p-0`}
       />
     </Section>
   );

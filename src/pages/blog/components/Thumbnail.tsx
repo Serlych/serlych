@@ -27,22 +27,21 @@ export default function Thumbnail({
 
   return (
     <Link href={`/blog/${id}`}>
-      <div className="z-1 relative w-fit max-w-2xl cursor-pointer transition-transform hover:scale-105 hover:brightness-110 hover:backdrop-blur-md">
+      <div className="z-1 relative w-full max-w-2xl cursor-pointer transition-transform hover:scale-[1.02] hover:brightness-110 hover:backdrop-blur-md">
         <img
           src="https://cdn.pixabay.com/photo/2021/07/13/11/34/cat-6463284_640.jpg"
           alt="Next.js and Tailwind CSS"
           width={700}
           height={300}
-          className="rounded-t-lg border-l border-r border-t border-violet-100 border-opacity-30
-          "
+          className="h-auto w-full rounded-t-lg border-l border-r border-t border-violet-100 border-opacity-30 object-cover"
         />
         <Panel className="flex flex-col gap-5 rounded-t-none">
-          <div className="flex gap-5">
+          <div className="flex flex-wrap gap-3">
             {tags
               ?.split(",")
               .map((tag, i) => <Tag key={`${id}-${i}`} tag={tag} />)}
           </div>
-          <h3 className="text-2xl">{title}</h3>
+          <h3 className="text-xl sm:text-2xl">{title}</h3>
           <p>{summary}</p>
           <Signature createdBy={createdBy} createdAt={createdAt} />
         </Panel>

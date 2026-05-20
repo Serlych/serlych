@@ -50,20 +50,20 @@ export default function Contact() {
       </Head>
       <StarBackground />
       <Header />
-      <Section className="items-start justify-center gap-10 pb-20 pt-56">
-        <div className="w-2/5">
-          <h1 className="bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text font-mono text-7xl text-transparent">
+      <Section className="items-start justify-center gap-8 pb-16 pt-44 sm:pb-20 sm:pt-52 lg:gap-10 lg:pt-56">
+        <div className="w-full lg:w-2/5">
+          <h1 className="bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text font-mono text-5xl text-transparent sm:text-6xl lg:text-7xl">
             Contact
           </h1>
-          <p className="mt-8 text-2xl leading-relaxed">Use form to send message directly.</p>
-          <p className="mt-6 text-xl leading-relaxed opacity-85">
+          <p className="mt-6 text-xl leading-relaxed sm:mt-8 sm:text-2xl">Use form to send message directly.</p>
+          <p className="mt-4 text-lg leading-relaxed opacity-85 sm:mt-6 sm:text-xl">
             Good for project inquiries, senior engineering roles, AI product work and consulting
             conversations.
           </p>
         </div>
-        <Panel className="w-3/5 p-8">
+        <Panel className="w-full p-5 sm:p-8 lg:w-3/5">
           <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-            <label className="flex flex-col gap-2 text-xl">
+            <label className="flex flex-col gap-2 text-lg sm:text-xl">
               Name
               <input
                 name="name"
@@ -72,7 +72,7 @@ export default function Contact() {
                 placeholder="Your name"
               />
             </label>
-            <label className="flex flex-col gap-2 text-xl">
+            <label className="flex flex-col gap-2 text-lg sm:text-xl">
               Email
               <input
                 name="email"
@@ -82,7 +82,7 @@ export default function Contact() {
                 placeholder="you@example.com"
               />
             </label>
-            <label className="flex flex-col gap-2 text-xl">
+            <label className="flex flex-col gap-2 text-lg sm:text-xl">
               Subject
               <input
                 name="subject"
@@ -91,7 +91,7 @@ export default function Contact() {
                 placeholder="Project inquiry"
               />
             </label>
-            <label className="flex flex-col gap-2 text-xl">
+            <label className="flex flex-col gap-2 text-lg sm:text-xl">
               Message
               <textarea
                 name="message"
@@ -104,7 +104,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="w-fit rounded-lg border border-violet-300 px-6 py-4 text-xl font-medium transition hover:bg-violet-300 hover:bg-opacity-10 disabled:cursor-not-allowed disabled:opacity-60"
+              className="w-full rounded-lg border border-violet-300 px-6 py-4 text-lg font-medium transition hover:bg-violet-300 hover:bg-opacity-10 disabled:cursor-not-allowed disabled:opacity-60 sm:w-fit sm:text-xl"
             >
               {status === "submitting" ? "Sending..." : "Send message"}
             </button>

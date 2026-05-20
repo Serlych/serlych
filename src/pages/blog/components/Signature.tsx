@@ -38,16 +38,16 @@ export default function Signature({ createdBy, createdAt }: SignatureProps) {
   }
 
   return (
-    <div className="flex gap-3">
+    <div className="flex items-center gap-3">
       <img
         src={user.imageUrl!}
         width={80}
         height={80}
         alt="User picture"
-        className="rounded-full"
+        className="h-14 w-14 rounded-full object-cover sm:h-20 sm:w-20"
       />
       <div className="flex flex-col">
-        <span className="text-xl">{user.name}</span>
+        <span className="text-lg sm:text-xl">{user.name}</span>
         <span>{formattedDate}</span>
       </div>
     </div>

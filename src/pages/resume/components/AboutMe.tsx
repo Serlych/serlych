@@ -38,8 +38,8 @@ export default function AboutMe() {
   });
 
   return (
-    <Section className="items-center justify-between gap-7">
-      <p className="w-2/3 text-justify text-2xl">
+    <Section className="items-start justify-between gap-7">
+      <p className="w-full text-left text-lg sm:text-xl lg:w-2/3 lg:text-2xl lg:text-justify">
         {resumeData.about.summary.map((segment, index) =>
           "bold" in segment && segment.bold ? (
             <b key={index}>{segment.text}</b>
@@ -48,7 +48,7 @@ export default function AboutMe() {
           ),
         )}
       </p>
-      <Panel className="w-1/3">
+      <Panel className="w-full overflow-x-auto lg:w-1/3">
         <pre>
           <code className="language-typescript">{code}</code>
         </pre>

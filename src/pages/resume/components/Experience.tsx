@@ -8,22 +8,8 @@ export default function Experience() {
   const selectedJob = resumeData.experience.jobs.find((job) => job.id === activeJob);
 
   return (
-    <Section>
-      <Panel className="flex w-1/2 flex-col items-center justify-center gap-5">
-        <h2 className="text-2xl font-bold">{resumeData.experience.title}</h2>
-        <ul className="exp-list">
-          {selectedJob ? (
-            <>
-              {selectedJob.achievements.map((achievement) => (
-                <li key={achievement}>{achievement}</li>
-              ))}
-            </>
-          ) : (
-            <>{resumeData.experience.emptyState}</>
-          )}
-        </ul>
-      </Panel>
-      <div className="flex w-1/2 flex-col">
+    <Section className="flex-col lg:flex-col">
+      <div className="flex w-full flex-col">
         {resumeData.experience.jobs.map((job, index) => (
           <div key={job.id}>
             <div
@@ -31,10 +17,10 @@ export default function Experience() {
               onClick={() => setActiveJob(job.id)}
             >
               <div className="flex flex-col">
-                <span className="bg-gradient-to-r from-violet-300 to-indigo-300 bg-clip-text text-4xl font-bold text-transparent">
+                <span className="bg-gradient-to-r from-violet-300 to-indigo-300 bg-clip-text text-2xl font-bold text-transparent sm:text-3xl lg:text-4xl">
                   {job.role} at
                   <a
-                    className="ml-2 font-bold underline text-indigo-950 dark:text-white"
+                    className="ml-2 break-words font-bold underline text-indigo-950 dark:text-white"
                     href={job.companyUrl}
                     target="_blank"
                   >
@@ -50,6 +36,20 @@ export default function Experience() {
           </div>
         ))}
       </div>
+      <Panel className="flex w-full flex-col items-center justify-center gap-5">
+        <h2 className="text-2xl font-bold">{resumeData.experience.title}</h2>
+        <ul className="exp-list">
+          {selectedJob ? (
+            <>
+              {selectedJob.achievements.map((achievement) => (
+                <li key={achievement}>{achievement}</li>
+              ))}
+            </>
+          ) : (
+            <>{resumeData.experience.emptyState}</>
+          )}
+        </ul>
+      </Panel>
     </Section>
   );
 }

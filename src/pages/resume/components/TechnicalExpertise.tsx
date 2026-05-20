@@ -101,7 +101,8 @@ export default function TechnicalExpertise() {
       {resumeData.technicalExpertise.sections.map((section, sectionIndex) => (
         <TechShowcase key={sectionIndex} description={section.description}>
           {section.items.map((item) => {
-            const logoSrc = item.id in techLogoMap ? techLogoMap[item.id as keyof typeof techLogoMap] : undefined;
+            const logoSrc =
+              item.id in techLogoMap ? techLogoMap[item.id as keyof typeof techLogoMap] : undefined;
 
             return <LogoWithDescription key={item.id} logoSrc={logoSrc} description={item.label} />;
           })}

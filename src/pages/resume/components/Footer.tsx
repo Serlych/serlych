@@ -12,9 +12,9 @@ export default function Footer() {
 
   return (
     <footer
-      className={`z-1 relative flex w-full items-end justify-between rounded-b-none border-b-0 p-5 backdrop-blur-sm ${THEME_BACKGROUND}`}
+      className={`z-1 relative flex w-full flex-col gap-8 rounded-b-none border-b-0 p-5 backdrop-blur-sm lg:flex-row lg:items-end lg:justify-between ${THEME_BACKGROUND}`}
     >
-      <div className="flex gap-20">
+      <div className="flex flex-col gap-8 sm:flex-row sm:gap-12 lg:gap-20">
         <div>
           <h3 className="mb-5 font-bold">{resumeData.footer.sitemapTitle}</h3>
           <ul className="flex list-inside flex-col gap-3">
@@ -38,7 +38,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <h3>{resumeData.footer.signatureName}, {currentYear}.</h3>
+      <h3 className="text-sm sm:text-base">{resumeData.footer.signatureName}, {currentYear}.</h3>
     </footer>
   );
 }

@@ -2,8 +2,7 @@
 import { useTheme } from "next-themes";
 
 export default function ThemeToggle() {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
+  const { theme, setTheme } = useTheme();
 
   return (
     <label className="mr-5 inline-flex cursor-pointer items-center">

@@ -29,7 +29,7 @@ body {
 .bullet::before {
   content: '•';
   color: rgb(49 46 129);
-  font-size: 6em;
+  font-size: clamp(3rem, 12vw, 6rem);
   margin-right: 0.1em;
   transition: transform 0.2s ease-out;
 }
@@ -53,21 +53,21 @@ body {
 .connector::before {
   content: '';
   background-color: rgb(79 70 229);
-  height: 75px;
+  height: 56px;
   width: 3px;
   display: block;
   position: relative;
-  bottom: 4rem;
+  bottom: 2.6rem;
 }
 
 .connector::after {
   content: '';
   background-color: rgb(79 70 229);
-  height: 75px;
+  height: 56px;
   width: 3px;
   display: block;
   position: relative;
-  top: -4rem;
+  top: -2.6rem;
 }
 
 .dark .connector::before,
@@ -77,6 +77,21 @@ body {
 
 .connector {
   margin-left: 1.2em;
+}
+
+@media (min-width: 640px) {
+  .connector::before,
+  .connector::after {
+    height: 75px;
+  }
+
+  .connector::before {
+    bottom: 4rem;
+  }
+
+  .connector::after {
+    top: -4rem;
+  }
 }
 
 .exp-list {

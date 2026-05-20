@@ -19,20 +19,24 @@ export default function Blog() {
       </Head>
       <StarBackground />
       <Header />
-      <h1 className="mb-10 pt-72 text-7xl">Blog</h1>
-      {data
-        ? data.map((post: LatestPost) => (
-          <Thumbnail
-            key={post.id}
-            id={post.id}
-            title={post.title}
-            summary={post.summary}
-            tags={post.tags}
-            createdAt={post.createdAt}
-            createdBy={post.createdBy}
-          />
-        ))
-        : "Loading posts..."}
+      <div className="px-4 pb-16 pt-44 sm:px-6 sm:pt-56 lg:px-0 lg:pt-72">
+        <h1 className="mb-10 text-5xl sm:text-6xl lg:text-7xl">Blog</h1>
+        <div className="flex flex-col gap-8">
+          {data
+            ? data.map((post: LatestPost) => (
+              <Thumbnail
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                summary={post.summary}
+                tags={post.tags}
+                createdAt={post.createdAt}
+                createdBy={post.createdBy}
+              />
+            ))
+            : "Loading posts..."}
+        </div>
+      </div>
     </>
   );
 }

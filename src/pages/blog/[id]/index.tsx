@@ -44,36 +44,32 @@ export default function BlogPost() {
     <>
       <Header />
       <div
-        className={`mx-auto mb-10 mt-52 flex w-full max-w-6xl items-center justify-between gap-10 ${THEME_BACKGROUND}`}
+        className={`mx-auto mb-10 mt-40 flex w-full max-w-6xl flex-col gap-8 px-4 py-5 sm:mt-48 sm:px-6 lg:mt-52 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:px-8 ${THEME_BACKGROUND}`}
       >
-        <div className="flex flex-col gap-20">
-          <div className="flex w-fit flex-col gap-5">
-            <div className="flex gap-3">
+        <div className="flex flex-col gap-10 lg:gap-20">
+          <div className="flex max-w-2xl flex-col gap-5">
+            <div className="flex flex-wrap gap-3">
               {tags.map((tag: string, i: number) => (
                 <Tag tag={tag} key={`${blogPost.id}-${tag}-${i}`} />
               ))}
             </div>
-            <h2 className="max-w-xl text-4xl">{blogPost.title}</h2>
+            <h2 className="max-w-xl text-3xl sm:text-4xl">{blogPost.title}</h2>
             <span>{readingTime} minute read</span>
-            <p className="text-xl">{blogPost.summary}</p>
+            <p className="text-lg sm:text-xl">{blogPost.summary}</p>
           </div>
           <Signature createdBy={blogPost.createdBy} createdAt={blogPost.createdAt} />
         </div>
         <Image
-          src={cat}
-          alt="cat"
-          width={350}
-          height={100}
-          className={`rounded-lg ${THEME_BACKGROUND} p-0`}
-        />
+        src={cat}
+        alt="cat"
+        width={350}
+        height={100}
+        className={`h-auto w-full max-w-sm rounded-lg ${THEME_BACKGROUND} p-0`}
+      />
       </div>
-      <article className="mx-auto flex max-w-2xl flex-col gap-5 whitespace-pre-line break-words font-serif text-xl leading-8 tracking-wide text-gray-700 subpixel-antialiased dark:text-white">
+      <article className="mx-auto flex max-w-2xl flex-col gap-5 px-4 pb-16 whitespace-pre-line break-words font-serif text-lg leading-8 tracking-wide text-gray-700 subpixel-antialiased dark:text-white sm:px-6 sm:text-xl lg:px-0">
         <Markdown>{blogPost.body}</Markdown>
       </article>
     </>
   );
-}
-
-function breakBodyIntoParagraphs(body: string) {
-  return body.split(".").map((paragraph, i) => <p key={`blog-p-${i}`}>{paragraph}</p>);
 }

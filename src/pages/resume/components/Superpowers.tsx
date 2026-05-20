@@ -9,15 +9,15 @@ export default function Superpowers() {
         <span className="font-mono text-sm uppercase tracking-[0.45em] text-sky-300">
           Strengths
         </span>
-        <div className="flex items-center justify-between border-b border-slate-300 pb-3 font-mono text-xs uppercase tracking-[0.35em] text-slate-600 dark:border-white/10 dark:text-white/50">
+        <div className="flex flex-col gap-2 border-b border-slate-300 pb-3 font-mono text-xs uppercase tracking-[0.35em] text-slate-600 dark:border-white/10 dark:text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <span>Operating Mode</span>
           <span>Built For Impact</span>
         </div>
         <div className="flex flex-col gap-2 lg:flex-row lg:items-end lg:justify-between">
-          <h2 className="bg-gradient-to-r from-sky-300 via-cyan-200 to-indigo-300 bg-clip-text text-6xl font-black uppercase tracking-[0.12em] text-transparent lg:text-8xl">
+          <h2 className="bg-gradient-to-r from-sky-300 via-cyan-200 to-indigo-300 bg-clip-text text-4xl font-black uppercase tracking-[0.12em] text-transparent sm:text-6xl lg:text-8xl">
             {resumeData.superpowers.title}
           </h2>
-          <span className="max-w-md text-right font-mono text-sm uppercase tracking-[0.25em] text-slate-600 dark:text-white/60">
+          <span className="max-w-md text-left font-mono text-sm uppercase tracking-[0.25em] text-slate-600 dark:text-white/60 lg:text-right">
             Root cause. Systems. Clarity. Leverage.
           </span>
         </div>
@@ -38,10 +38,10 @@ export default function Superpowers() {
                 </span>
               </div>
               <div className="flex flex-col gap-3">
-                <span className="font-mono text-xs uppercase tracking-[0.35em] text-slate-600 dark:text-white/45">
+                <span className="break-words font-mono text-xs uppercase tracking-[0.25em] text-slate-600 dark:text-white/45 sm:tracking-[0.35em]">
                   Superpower
                 </span>
-                <h3 className="text-3xl font-black uppercase leading-tight tracking-[0.08em] text-slate-950 dark:text-white">
+                <h3 className="break-words text-xl font-black uppercase leading-tight tracking-[0.05em] text-slate-950 dark:text-white sm:text-3xl sm:tracking-[0.08em]">
                   {item}
                 </h3>
               </div>
