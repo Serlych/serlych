@@ -29,7 +29,11 @@ export default function Header() {
         <div className="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-3 lg:w-auto">
           <ThemeToggle />
           <Link href="https://app.daily.dev/serlych" target="_blank" rel="noreferrer">
-            <Image src={dailyDevLogo} alt="daily.dev Logo" className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14" />
+            <Image
+              src={dailyDevLogo}
+              alt="daily.dev Logo"
+              className="h-10 w-10 invert dark:invert-0 sm:h-12 sm:w-12 lg:h-14 lg:w-14"
+            />
           </Link>
           <Link href="https://www.linkedin.com/in/joelchavoya/" target="_blank">
             <Image
