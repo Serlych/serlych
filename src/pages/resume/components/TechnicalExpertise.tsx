@@ -39,7 +39,6 @@ import zod from "~/assets/zod.svg";
 import kafka from "~/assets/kafka.svg";
 import rabbitmq from "~/assets/rabbitmq.svg";
 import sqs from "~/assets/sqs.svg";
-import kinesis from "~/assets/kinesis.svg";
 import redpanda from "~/assets/redpanda.svg";
 import datadog from "~/assets/datadog.svg";
 import launchdarkly from "~/assets/launchdarkly.svg";
@@ -86,7 +85,6 @@ const techLogoMap = {
   kafka,
   rabbitmq,
   sqs,
-  kinesis,
   redpanda,
   datadog,
   launchdarkly,

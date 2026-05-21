@@ -127,6 +127,7 @@ export const resumeData = {
           { id: "css", label: "CSS" },
           { id: "git", label: "Git" },
           { id: "react", label: "React" },
+          { id: "express", label: "Express" },
           { id: "postgres", label: "PostgreSQL" },
         ],
       },
@@ -134,7 +135,6 @@ export const resumeData = {
         description: "I have some experience with...",
         items: [
           { id: "angular", label: "Angular" },
-          { id: "express", label: "Express" },
           { id: "node", label: "NodeJS" },
           { id: "graphql", label: "GraphQL" },
           { id: "apollo", label: "Apollo" },
@@ -161,7 +161,6 @@ export const resumeData = {
           { id: "kafka", label: "Kafka" },
           { id: "rabbitmq", label: "RabbitMQ" },
           { id: "sqs", label: "SQS" },
-          { id: "kinesis", label: "Kinesis" },
           { id: "redpanda", label: "Redpanda" },
           { id: "datadog", label: "Datadog" },
           { id: "launchdarkly", label: "LaunchDarkly" },
