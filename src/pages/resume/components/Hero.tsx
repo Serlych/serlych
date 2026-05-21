@@ -12,10 +12,7 @@ export default function Hero() {
         <p>{resumeData.hero.intro}</p>
         <p>{resumeData.hero.tagline}</p>
       </div>
-      {/*<div>*/}
-      {/*  <Button placement="left">Contact me</Button>*/}
-      {/*  <Button placement="right">Download resume</Button>*/}
-      {/*</div>*/}
+      <ResumeDownloadButton />
     </Section>
   );
 }
