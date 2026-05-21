@@ -4,7 +4,7 @@ import { resumeData } from "~/data/resume";
 
 export default function Superpowers() {
   return (
-    <Section className="flex-col gap-8 py-16">
+    <Section className="flex-col gap-8 py-16 lg:flex-col">
       <div className="flex flex-col gap-3">
         <span className="font-mono text-sm uppercase tracking-[0.45em] text-sky-300">
           Strengths

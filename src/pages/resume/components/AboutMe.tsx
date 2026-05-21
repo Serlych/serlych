@@ -38,7 +38,7 @@ export default function AboutMe() {
   });
 
   return (
-    <Section className="items-start justify-between gap-7">
+    <Section className="items-start justify-between gap-7 flex-col">
       <p className="w-full text-left text-lg sm:text-xl lg:w-2/3 lg:text-2xl lg:text-justify">
         {resumeData.about.summary.map((segment, index) =>
           "bold" in segment && segment.bold ? (

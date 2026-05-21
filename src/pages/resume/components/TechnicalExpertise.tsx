@@ -97,7 +97,7 @@ const techLogoMap = {
 
 export default function TechnicalExpertise() {
   return (
-    <Section className="flex-col">
+    <Section className="flex-col gap-4 lg:flex-col">
       {resumeData.technicalExpertise.sections.map((section, sectionIndex) => (
         <TechShowcase key={sectionIndex} description={section.description}>
           {section.items.map((item) => {
