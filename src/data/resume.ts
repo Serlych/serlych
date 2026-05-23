@@ -118,7 +118,7 @@ export const resumeData = {
   technicalExpertise: {
     sections: [
       {
-        description: "I am most experienced with...",
+        description: "Core expertise",
         items: [
           { id: "github", label: "GitHub" },
           { id: "js", label: "JavaScript" },
@@ -132,7 +132,7 @@ export const resumeData = {
         ],
       },
       {
-        description: "I have some experience with...",
+        description: "Working knowledge",
         items: [
           { id: "angular", label: "Angular" },
           { id: "node", label: "NodeJS" },
