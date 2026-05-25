@@ -12,11 +12,28 @@ export default function Experience() {
       <div className="flex w-full flex-col">
         {resumeData.experience.jobs.map((job, index) => {
           const isSelected = activeJob === job.id;
+          const hasNextJob = index < resumeData.experience.jobs.length - 1;
 
           return (
-            <div key={job.id}>
+            <div key={job.id} className={`${hasNextJob ? "pb-4" : ""} grid grid-cols-[2.75rem_1fr]`}>
               <div
-                className={`bullet flex cursor-pointer items-center rounded-lg px-2 py-1 transition ${
+                className="relative flex justify-center"
+              >
+                <span
+                  className={`mt-5 h-4 w-4 rounded-full border-2 transition ${
+                    isSelected
+                      ? "border-sky-200 bg-indigo-400 shadow-[0_0_0_4px_rgba(99,102,241,0.25)] dark:border-sky-100"
+                      : "border-indigo-700 bg-indigo-600 dark:border-white dark:bg-white"
+                  }`}
+                />
+                {hasNextJob ? (
+                  <span
+                    className="absolute left-1/2 top-9 bottom-[-1rem] w-[3px] -translate-x-1/2 bg-indigo-600 dark:bg-white"
+                  />
+                ) : null}
+              </div>
+              <div
+                className={`cursor-pointer rounded-lg px-2 py-1 transition ${
                   isSelected
                     ? "bg-indigo-400 bg-opacity-20 ring-1 ring-indigo-400/60"
                     : "hover:bg-indigo-400 hover:bg-opacity-15"
@@ -55,7 +72,6 @@ export default function Experience() {
                   </span>
                 </div>
               </div>
-              {index < resumeData.experience.jobs.length - 1 ? <div className="connector h-0" /> : null}
             </div>
           );
         })}
