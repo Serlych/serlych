@@ -93,7 +93,7 @@ export const resumeData = {
           "Helped with the complete rewrite of the main product of a major financial company, modernizing its codebase, improving its performance and future-proofing it",
           "Promoted to Software Engineer II after 1 year",
           "Standardized the production release process for a client, reducing cognitive load for new engineers, streamlining it from manual to automated workflows and reducing the time-to-release",
-          "Retained an important client thanks to successful communication, careful collaboration and social skills",
+          "Retained an important client thanks to successful communication, careful collaboration, technical execution and social skills",
           "Developed a custom configuration service that allowed a media-industry client to globally customize content delivery in all of their multiple publication networks",
           "Created a production-ready, tested and documented menu component for a major media-streaming company with thousands of users, improving the overall user experience",
           "Promoted to Software Engineer III after 2 years",
