@@ -56,13 +56,13 @@ export const resumeData = {
         companyUrl: "https://www.fountain.com",
         period: "May 2025 - April 2026",
         achievements: [
+          "Built an AI-powered vulnerability remediation platform that automated dependency security updates across a large codebase. The system achieved ~90% autonomous remediation rates and provided intelligent escalation workflows for the remaining cases, resulting in complete coverage of Dependabot vulnerabilities and substantially reducing manual security maintenance.",
           "Became a go-to engineer for a complex event-driven platform by mapping critical workflows end to end and driving solutions that held up in production.",
           "Solved difficult cross-service production issues across TypeScript, MongoDB, Kafka, SQS, Kinesis, and CDC pipelines by tracing failures through low-observability systems.",
           "Delivered enterprise-facing features for major customers in a multi-tenant application, using LaunchDarkly to support segmented rollouts and production-safe releases.",
           "Built timezone-aware SMS scheduling logic for survey delivery, ensuring messages were sent within local working hours for customers across global regions.",
           "Led root-cause analysis for a production incident involving runaway recurring survey creation, identified the exact failure path, and drove the corrective fix.",
           "Delivered core WhatsApp platform capabilities, including template workflows, vendor integration, phone number onboarding, tenant linkage, and support for Meta messaging constraints.",
-          "Automated dependency vulnerability response by creating an agent workflow that opened remediation PRs and posted them to Slack for review.",
         ],
       },
       {
