@@ -12,13 +12,13 @@ const optionCopy: Record<
 > = {
   "one-page": {
     fileName: "isaac-chavoya-resume-summary.pdf",
-    title: "1 pager",
-    description: "Highlights, executive summary, core strengths, primary stack.",
+    title: "One-page resume",
+    description: "A concise profile, selected results, and core technical skills.",
   },
   full: {
     fileName: "isaac-chavoya-full-cv.pdf",
     title: "Full CV",
-    description: "Full experience, achievements, technical expertise, education.",
+    description: "Experience, achievements, technical expertise, and education.",
   },
 };
 
@@ -70,7 +70,7 @@ export default function ResumeDownloadButton() {
               Export PDF
             </span>
             <p className="text-sm text-slate-700 dark:text-white/75 sm:text-base">
-              Choose concise summary or full CV. Both files are generated from `src/data/resume.ts`.
+              Choose a one-page overview or the full story of my work.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
