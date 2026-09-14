@@ -147,15 +147,7 @@ function supportingSkills() {
 }
 
 function onePageHighlights() {
-  const jobs = resumeData.experience.jobs;
-
-  return [
-    `${jobs[0]?.company}: ${jobs[0]?.achievements[0] ?? ""}`,
-    `${jobs[0]?.company}: ${jobs[0]?.achievements[2] ?? ""}`,
-    `${jobs[1]?.company}: ${jobs[1]?.achievements[0] ?? ""}`,
-    `${jobs[1]?.company}: ${jobs[1]?.achievements[5] ?? ""}`,
-    `${jobs[2]?.company}: ${jobs[2]?.achievements[2] ?? ""}`,
-  ].filter(Boolean);
+  return resumeData.experience.highlights;
 }
 
 function educationLines() {
@@ -508,7 +500,7 @@ class ResumePdfLayout {
   }
 
   renderOnePage() {
-    this.section("Executive Summary");
+    this.section("Profile");
     this.paragraph(summaryText(), {
       fontSize: 10.4,
       lineHeight: 14.1,
