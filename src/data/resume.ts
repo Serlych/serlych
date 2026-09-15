@@ -49,11 +49,11 @@ export const resumeData = {
         companyUrl: "https://www.fountain.com",
         period: "May 2025 — April 2026",
         achievements: [
-          "Built an AI remediation workflow that prepared complete fixes for ~90% of processed Dependabot issues and escalated ~10% to engineers, with individual pull requests and Slack review notifications.",
+          "Built an AI remediation workflow that prepared complete fixes for ~90% of processed Dependabot issues and escalated ~10% to engineers via individual pull requests and Slack notifications, achieving 100% vulnerability remediation. Added a weekly job to identify and remediate new vulnerabilities.",
           "Unblocked survey delivery to previously excluded workers for a major enterprise customer. Proposed and implemented an extension of existing segmentation workflows, preserving core behavior without new mechanisms, with targeted LaunchDarkly rollouts.",
           "Eliminated out-of-hours survey SMS delivery for global customers with timezone-aware scheduling. Delivery data confirmed the result, with no further customer complaints.",
           "Co-delivered WhatsApp messaging with one other engineer in 2.5 months: template approval, tenant phone-number onboarding, messaging-window controls, and a vendor abstraction supporting future provider changes.",
-          "Traced production failures across a 24-microservice platform using TypeScript, MongoDB, and event-driven messaging. Identified the cause of runaway recurring surveys and wrote the root-cause analysis by reconstructing the failure chain.",
+          "Diagnosed and fixed two production failures across a 24-microservice, event-driven platform, including runaway recurring survey creation. Traced failures through TypeScript and MongoDB workflows and documented the survey incident in a root-cause analysis.",
         ],
       },
       {
@@ -63,13 +63,13 @@ export const resumeData = {
         companyUrl: "https://www.roii.tech",
         period: "October 2023 — April 2025",
         achievements: [
-          "Cut slow PostgreSQL query times from up to 13 seconds to under 50 milliseconds using EXPLAIN ANALYZE.",
+          "Led architecture and technical decisions for three developers replacing AppSheet with a custom finance platform. Defined data models and workflows for financial dashboards, task management, and cent-accurate calculations, aligning business priorities with team capacity.",
+          "Built reusable APIs, shared Drizzle schemas, and a CLI for provisioning client applications and infrastructure, enabling the team to launch applications without rebuilding common functionality.",
           "Replaced manual uploads with shared GitHub Actions and AWS workflows: automatic development deployments in ~3 minutes, one-click production releases and rollbacks, and Google Chat notifications.",
           "Designed an offline harvest-tracking app’s architecture, data model, and SQLite sync, guiding junior engineers through implementation. Collection records and unique, signed printed tickets enabled faster, more accurate pay; records synced over Starlink to support seasonal business reporting.",
-          "Led architecture and technical decisions for three developers replacing AppSheet with a custom finance platform. Defined data models and workflows for financial dashboards, task management, and cent-accurate calculations, aligning business priorities with team capacity.",
           "Automated invoice ingestion from email through AWS Lambda and SQS into the database, enabling near-real-time financial reporting. Integrated an invoicing provider through a dedicated microservice.",
-          "Built reusable APIs, shared Drizzle schemas, and a CLI for provisioning client applications and infrastructure, enabling the team to launch applications without rebuilding common functionality.",
-          "Separated development from production, introduced issue triage, and documented engineering practices, giving junior engineers a safer environment and shared guidance for implementation.",
+          "Cut slow PostgreSQL query times from up to 13 seconds to under 50 milliseconds using EXPLAIN ANALYZE.",
+          "Introduced best development practices to the team, such as issue triage, environment separation, and engineering practices documentation, giving junior engineers a safer environment and shared guidance for implementation.",
         ],
       },
       {
@@ -79,9 +79,9 @@ export const resumeData = {
         companyUrl: "https://www.wizeline.com",
         period: "January 2020 — August 2023",
         achievements: [
-          "Implemented a widely adopted GraphQL, MongoDB, and React configuration manager for a publishing platform serving 19+ sites. Migrated selected settings out of code, enabling publication teams to make changes without engineering work or deployments.",
           "Owned Android and iOS menu implementation for a children’s streaming app used by thousands, with automated tests and Firebase analytics and observability. Shared adult-menu access logic across React Native and web.",
           "Helped retain a major publishing client during repeated team turnover; account leadership explicitly credited my technical execution and client collaboration with preserving the engagement.",
+          "Implemented a widely adopted GraphQL, MongoDB, and React configuration manager for a publishing platform serving 19+ sites. Migrated selected settings out of code, enabling publication teams to make changes without engineering work or deployments.",
           "Promoted to Software Engineer II after one year and to Software Engineer III in my final year.",
         ],
       },
